@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
+import DemoSync from "@/components/DemoSync";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -133,6 +134,16 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Посмотрите, как это работает</h2>
+            <p className="text-xl text-gray-600">Интерактивная демонстрация процесса синхронизации</p>
+          </div>
+          <DemoSync />
         </div>
       </section>
 
