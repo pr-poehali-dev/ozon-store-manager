@@ -296,6 +296,17 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Свяжитесь с нами</h2>
             <p className="text-xl text-gray-600">Ответим на все вопросы и поможем начать работу</p>
+            <div className="mt-6">
+              <a 
+                href="https://t.me/nn_liteapi" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-lg font-semibold"
+              >
+                <Icon name="Send" size={24} />
+                Написать в Telegram: @nn_liteapi
+              </a>
+            </div>
           </div>
           <Card className="border-none shadow-xl">
             <CardContent className="p-8">
