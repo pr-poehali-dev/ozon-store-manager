@@ -212,15 +212,22 @@ const Index = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-gray-600"> ₽</span>
-                    {plan.totalPrice && (
-                      <div className="text-sm text-gray-500 mt-1">
-                        {plan.totalPrice} ₽/месяц
-                      </div>
+                    {plan.totalPrice ? (
+                      <>
+                        <span className="text-4xl font-bold">{plan.totalPrice}</span>
+                        <span className="text-gray-600"> ₽/месяц</span>
+                        <div className="text-sm text-gray-500 mt-1">
+                          {plan.price} ₽ {plan.period}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-4xl font-bold">{plan.price}</span>
+                        <span className="text-gray-600"> ₽</span>
+                        <p className="text-sm text-gray-500 mt-2">{plan.period}</p>
+                      </>
                     )}
                   </div>
-                  <p className="text-sm text-gray-500 mt-2">{plan.period}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
