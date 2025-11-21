@@ -292,25 +292,44 @@ const Index = () => {
       </section>
 
       <section id="contacts" className="py-20 px-4">
-        <div className="container mx-auto max-w-2xl">
+        <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Свяжитесь с нами</h2>
             <p className="text-xl text-gray-600">Ответим на все вопросы и поможем начать работу</p>
-            <div className="mt-6">
-              <a 
-                href="https://t.me/nn_liteapi" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-lg font-semibold"
-              >
-                <Icon name="Send" size={24} />
-                Написать в Telegram: @nn_liteapi
-              </a>
-            </div>
           </div>
-          <Card className="border-none shadow-xl">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+          
+          <div className="grid md:grid-cols-2 gap-8 items-start mb-12">
+            <Card className="border-none shadow-xl">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <img 
+                    src="https://t.me/i/userpic/320/nn_liteapi.jpg" 
+                    alt="Контакт"
+                    className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://ui-avatars.com/api/?name=NN&size=128&background=3b82f6&color=fff';
+                    }}
+                  />
+                  <h3 className="text-2xl font-bold mb-2">Напишите мне напрямую</h3>
+                  <p className="text-gray-600 mb-6">Отвечу на все вопросы о сервисе</p>
+                </div>
+                <a 
+                  href="https://t.me/nn_liteapi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all font-semibold"
+                >
+                  <Icon name="Send" size={20} />
+                  Написать в Telegram
+                </a>
+                <p className="text-sm text-gray-500 mt-4">@nn_liteapi</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-xl">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold mb-4">Или заполните форму</h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Имя</label>
                   <Input 
@@ -343,9 +362,10 @@ const Index = () => {
                 <Button type="submit" className="w-full" size="lg">
                   Отправить сообщение
                 </Button>
-              </form>
-            </CardContent>
-          </Card>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
