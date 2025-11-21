@@ -156,42 +156,47 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "Старт",
-                price: "9 990",
+                name: "1 месяц",
+                price: "4 000",
                 period: "месяц",
                 features: [
-                  "До 1000 товаров",
-                  "Базовая аналитика",
+                  "Все функции платформы",
+                  "Автоматическая синхронизация",
+                  "Безлимит товаров и заказов",
+                  "Полная аналитика",
                   "Email поддержка",
                   "API доступ"
                 ]
               },
               {
-                name: "Бизнес",
-                price: "19 990",
-                period: "месяц",
+                name: "3 месяца",
+                price: "10 500",
+                totalPrice: "3 500",
+                period: "за 3 месяца",
                 popular: true,
                 features: [
-                  "До 10 000 товаров",
-                  "Продвинутая аналитика",
+                  "Все функции платформы",
+                  "Автоматическая синхронизация",
+                  "Безлимит товаров и заказов",
+                  "Полная аналитика",
                   "Приоритетная поддержка",
                   "API доступ",
-                  "Автоматические отчеты",
-                  "Интеграция с CRM"
+                  "Экономия 1 500 ₽"
                 ]
               },
               {
-                name: "Премиум",
-                price: "39 990",
-                period: "месяц",
+                name: "6 месяцев",
+                price: "18 000",
+                totalPrice: "3 000",
+                period: "за 6 месяцев",
                 features: [
-                  "Безлимитные товары",
+                  "Все функции платформы",
+                  "Автоматическая синхронизация",
+                  "Безлимит товаров и заказов",
                   "Полная аналитика",
-                  "24/7 поддержка",
+                  "Приоритетная поддержка",
                   "API доступ",
-                  "Автоматические отчеты",
-                  "Интеграция с CRM",
-                  "Персональный менеджер"
+                  "Экономия 6 000 ₽"
                 ]
               }
             ].map((plan, index) => (
@@ -208,8 +213,14 @@ const Index = () => {
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
                   <div className="mt-4">
                     <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-gray-600"> ₽/{plan.period}</span>
+                    <span className="text-gray-600"> ₽</span>
+                    {plan.totalPrice && (
+                      <div className="text-sm text-gray-500 mt-1">
+                        {plan.totalPrice} ₽/месяц
+                      </div>
+                    )}
                   </div>
+                  <p className="text-sm text-gray-500 mt-2">{plan.period}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
